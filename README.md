@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# 🎮 2048 Game (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and fully functional implementation of the classic **2048 puzzle game**, built with **React**, **TypeScript**.  
+The goal is simple — combine tiles with the same number to reach **2048!**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 🎲 **4x4 Game Board** — Classic grid layout with smooth tile movement.  
+- 🔢 **Random Tile Generation** — Two tiles appear randomly at the start and after every valid move.  
+- ⬆️ **Move Controls** — Use keyboard arrow keys to move tiles (Up, Down, Left, Right).  
+- 💥 **Tile Merging** — Tiles with the same number merge into one with double the value.  
+- 🧠 **Game State Management** — Built with a functional, state-driven architecture using TypeScript.  
+- 🏆 **Score Tracking** — Real-time score updates and persistent best score (saved in localStorage).  
+- 😎 **Responsive UI** — Clean, minimal, and mobile-friendly layout styled with TailwindCSS.  
+- 🔄 **New Game** — Restart the game anytime with a single click.  
+- 🧩 **Modular Codebase** — Separated logic for board creation, movement, and merging to ensure maintainability.  
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Category | Technology |
+|----------|------------|
+| Frontend Framework | React |
+| Language | TypeScript |
+| Styling | TailwindCSS |
+| State Management | React Hooks |
+| Build Tool | Vite / Create React App (depending on setup) |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📂 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2048-game/
+```
+└── src
+    └── assets
+        ├── react.svg
+    └── components
+        ├── Board.tsx
+        ├── GameStatus.tsx
+        ├── RestartButton.tsx
+        ├── ScoreBoard.tsx
+    └── constants
+        ├── const.values.ts
+    └── game
+        ├── logic.ts
+    └── page
+        ├── MainPage.tsx
+    └── state
+        ├── game.reducer.ts
+    └── types
+        ├── interface.d.ts
+        ├── types.d.ts
+    └── utils
+        ├── storage.ts
+    ├── App.tsx
+    ├── index.css
+    └── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Installation & Setup
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository
+```bash
+git clone https://github.com/your-username/2048-react-ts.git
+cd 2048-react-ts
 ```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Build for production
+```bash
+npm run build
+# or
+yarn build
+```
+
+---
+
+## 🎮 How to Play
+
+- Use Arrow Keys (↑ ↓ ← →) to move tiles.
+- When two tiles with the same number collide, they merge into one.
+- Each merge increases your score.
+- Try to create a 2048 tile to win!
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License — feel free to use and modify it.
+
+---
